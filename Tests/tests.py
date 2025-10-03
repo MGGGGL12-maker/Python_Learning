@@ -1,21 +1,36 @@
-class Student:
-
-    class_year = 2025
-    num_students = 0
-
-    def __init__(self, name, age):
+class Animal:
+    def __init__(self, name):
         self.name = name
-        self.age = age
-        Student.num_students += 1
+    def eat(self):
+        print(f"{self.name} is eating")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping")
+
+class Prey(Animal):
+    def flee(self):
+        print(f"{self.name} is fleeing")
 
 
-student1 = Student("Spongebob", 30)
-student2 = Student("Patrick", 35)
-student3 = Student("Squidward", 55)
-student4 = Student("Sandy", 27)
+class Predator(Animal):
+    def hunt(self):
+        print(f"{self.name} is hunting")
 
-print(f"My graduating class of {Student.class_year} has {Student.num_students} students")
-print(student1.name)
-print(student2.name)
-print(student3.name)
-print(student4.name)
+
+class Rabbit (Prey):
+    pass
+
+
+class Hawk (Predator):
+    pass
+
+
+class Fish (Prey, Predator):
+    pass
+
+
+rabbit = Rabbit("Bugs")
+hawk = Hawk("Tony")
+fish = Fish("Nemo")
+
+fish.hunt()
