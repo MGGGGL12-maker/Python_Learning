@@ -1,9 +1,9 @@
 # Python number guessing game
-import random
+from random import randint
 
 lowest_number = 1
 highest_number = 100
-answer = random.randint(lowest_number, highest_number)
+answer = randint(lowest_number, highest_number)
 guesses = 0
 is_running = True
 
